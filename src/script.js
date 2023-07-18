@@ -63,6 +63,7 @@ window.addEventListener('click', function(e) {
         gltf.scene.position.copy(intersectionPoint);
         gltf.scene.scale.set(.5, .5, .5);
         scene.add(gltf.scene);
+        console.log("Object Instanced");
     });
 })
 
