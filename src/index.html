@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
-    <!-- <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> -->
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <!-- <script src="https://unpkg.com/aframe-image-portal@latest"></script> -->
     <title>Place Object Test</title>
     <link rel="stylesheet" href="./style.css">
@@ -14,15 +14,15 @@
     <canvas class="webgl"></canvas>
     <!-- <script type="module" src="./script.js"></script> -->
     <a-scene embedded arjs>
-        <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+        <!-- <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box> -->
         <!-- <a-marker-camera preset='hiro'></a-marker-camera> -->
 
         <a-assets>
-            <a-asset-item id="NicoModel" src="/models/Reloj_wNiko.glb"></a-asset-item>
+            <a-asset-item id="NicoModel" src="./models/Reloj_wNikoUncom.glb"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: true"></a-camera>
-        <a-entity gltf-model="#NicoModel"></a-entity>
+        <a-entity gltf-model="#NicoModel" position="0 0 0" scale="1 1 1"></a-entity>
 
     </a-scene>
     <!-- <script type="module" src="./script.js"></script> -->
