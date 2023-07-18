@@ -12,19 +12,12 @@
 </head>
 <body>
     <canvas class="webgl"></canvas>
-    <script type="module" src="./script.js"></script>
+    <script mindar-image="imageTargetSrc:https://cdn.glitch.global/e8b8ddd4-4b7f-489a-9816-34c75793261d/targets.mind; missTolerance:20; filterMinCF:0.00001; filterBeta: 10000; warmupTolerance:15;"  type="module" src="./script.js"></script>
     <a-scene color-space="sRGB" renderer="sortObjects: false;">
         <a-assets>
-          <!-- <img id="card" src="https://cdn.glitch.global/e8b8ddd4-4b7f-489a-9816-34c75793261d/QRSpaceboy.jpeg" /> -->
-          <!-- <a-asset-item id="MaskModel" src="https://cdn.glitch.global/e8b8ddd4-4b7f-489a-9816-34c75793261d/image-portal.glb?v=1689385812208"></a-asset-item>
-          <a-asset-item id="NicoModel" src="https://cdn.glitch.global/e8b8ddd4-4b7f-489a-9816-34c75793261d/Invitacion_Niko_Rig_ParaExportar.glb?v=1689190193559"></a-asset-item>
-          <a-asset-item id="RelojModel" src="https://cdn.glitch.global/e8b8ddd4-4b7f-489a-9816-34c75793261d/RELOJ_02.glb?v=1689273681727"></a-asset-item> -->
-          <a-asset-item id="GlassModel" src="https://cdn.glitch.global/e8b8ddd4-4b7f-489a-9816-34c75793261d/Glass_Luz.glb?v=1689363392764"></a-asset-item>
-          <!-- <video id="glitchVideo" autoplay loop="true" src="https://cdn.glitch.global/e8b8ddd4-4b7f-489a-9816-34c75793261d/Glitches_Media_v4.mp4?v=1689276464677"></video> -->
-          <a-asset-item id="RelojNicoModel" src="https://cdn.glitch.global/e8b8ddd4-4b7f-489a-9816-34c75793261d/Reloj_wNikoUncom.glb?v=1689636778828"></a-asset-item>
         </a-assets>
 
-        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-camera position="0 0 0" look-controls="enabled: true"></a-camera>
         <a-entity mindar-image-target="targetIndex: 0"></a-entity>
 
     </a-scene>
