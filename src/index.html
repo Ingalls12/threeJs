@@ -18,10 +18,11 @@
         <a-marker-camera preset='hiro'></a-marker-camera>
 
         <a-assets>
+            <a-asset-item id="NicoModel" src="/models/Reloj_wNiko.glb"></a-asset-item>
         </a-assets>
 
-        <!-- <a-camera position="0 0 0" look-controls="enabled: true"></a-camera> -->
-        <a-entity></a-entity>
+        <a-camera position="0 0 0" look-controls="enabled: true"></a-camera>
+        <a-entity gltf-model="#NicoModel"></a-entity>
 
     </a-scene>
 </body>
