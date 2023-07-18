@@ -32,7 +32,7 @@ orbit.update();
 
 // Sets a 12 by 12 gird helper
 const gridHelper = new THREE.GridHelper(12, 12);
-scene.add(gridHelper);
+// scene.add(gridHelper);
 
 // Sets the x, y, and z axes with each having a length of 4
 const axesHelper = new THREE.AxesHelper(4);
