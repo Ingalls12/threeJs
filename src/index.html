@@ -24,14 +24,16 @@
         }); -->
 
         <a-assets>
+            <!-- Define video  -->
+            <video id="videoGyro" autoplay loop="true" src="./videos/Gyro.mp4"></video>
+            <!-- Define model  -->
             <a-asset-item id="NicoModel" src="./models/Reloj_wNikoUncom.glb"></a-asset-item>
-            <video id="video1" autoplay loop="true" src="./videos/Logo_Anim.mp4"></video>
         </a-assets>
 
         <!-- Camera -->
         <a-camera position="0 0 0" look-controls="enabled: true"></a-camera>
         <!-- Video -->
-        <a-video src="video1" width="16" height="9" position="0 0 -20"></a-video>
+        <a-video src="#videoGyro" width="16" height="9" position="0 0 -20"></a-video>
         <!-- Animated Model -->
         <a-entity gltf-model="#NicoModel" position="0 0 -1 " scale=".25 .25 .25" animation-mixer></a-entity>
 
