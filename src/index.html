@@ -25,13 +25,18 @@
 
         <a-assets>
             <a-asset-item id="NicoModel" src="./models/Reloj_wNikoUncom.glb"></a-asset-item>
+            <video id="video1" autoplay loop="true" src="./videos/Logo_Anim.mp4"></video>
         </a-assets>
 
+        <!-- Camera -->
         <a-camera position="0 0 0" look-controls="enabled: true"></a-camera>
-        <a-entity gltf-model="#NicoModel" position="0 0 -2 " scale=".2 .2 .2" animation-mixer></a-entity>
+        <!-- Video -->
+        <a-video src="video1" width="16" height="9" position="0 0 -20"></a-video>
+        <!-- Animated Model -->
+        <a-entity gltf-model="#NicoModel" position="0 0 -1 " scale=".25 .25 .25" animation-mixer></a-entity>
 
     </a-scene>
-    <script type="module" src="./script.js"></script>
+    <!-- <script type="module" src="./script.js"></script> -->
 </body>
 </html>
 
