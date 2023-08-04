@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
-    <!-- <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> -->
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <!-- <script src="https://unpkg.com/aframe-image-portal@latest"></script> -->
     <title>Place Object Test</title>
     <link rel="stylesheet" href="./style.css">
@@ -25,7 +25,7 @@
 
         <a-assets>
             <!-- Define video  -->
-            <video id="videoGyro" autoplay loop="true" src="./videos/Logo_Anim.mp4"></video>
+            <video id="videoLogo" autoplay loop="true" src="./videos/Logo.mp4"></video>
             <!-- Define model  -->
             <a-asset-item id="NicoModel" src="./models/Reloj_wNikoUncom.glb"></a-asset-item>
         </a-assets>
@@ -33,7 +33,7 @@
         <!-- Camera -->
         <a-camera position="0 0 0" look-controls="enabled: true"></a-camera>
         <!-- Video -->
-        <a-video src="#videoGyro" width="8" height="4.5" position="0 2 -20"></a-video>
+        <a-video loop="true" src="#videoLogo" width="8" height="4.5" position="0 2 -20"></a-video>
         <!-- Animated Model -->
         <a-entity gltf-model="#NicoModel" position="0 0 -1 " scale=".25 .25 .25" animation-mixer></a-entity>
 
