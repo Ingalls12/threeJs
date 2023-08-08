@@ -7,6 +7,23 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <!-- <script src="https://unpkg.com/aframe-image-portal@latest"></script> -->
+    <script>
+        AFRAME.registerComponent('play-pause', {
+            init: function() {
+                var myVideo = document.querySelector('#videoLogo');
+                var videoControls = document.querySelector('#videoControls');
+                this.el.addEventListener('click', function() {
+                    if(myVideo.paused) {
+                        myVideo.play();
+                        videoControls.setAttribute('src', '#pause');
+                    } else {
+                        myVideo.pause();
+                        videoControls.setAttribute('src', '#play');
+                    }
+                });
+            }
+        });
+    </script>
     <title>Place Object Test</title>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -25,15 +42,23 @@
 
         <a-assets>
             <!-- Define video  -->
-            <video id="videoLogo" autoplay loop="true" src="./videos/Logo.mp4"></video>
+            <img id="play" src="./textures/BtnPlay.png">
+            <img id="pause" src="./textures/BtnPause.png">
+            <video id="videoLogo" autoplay loop="true" src="./videos/Rope.mp4"></video>
             <!-- Define model  -->
             <a-asset-item id="NicoModel" src="./models/Reloj_wNikoUncom.glb"></a-asset-item>
         </a-assets>
 
         <!-- Camera -->
-        <a-camera position="0 0 0" look-controls="enabled: true"></a-camera>
+        <a-camera position="0 0 0" look-controls="enabled: true">
+            <a-cursor></a-cursor>
+        </a-camera>
         <!-- Video -->
-        <a-video loop="true" src="#videoLogo" width="8" height="4.5" position="0 2 -20"></a-video>
+        <a-video loop="true" src="#videoLogo" width="8" height="4.5" position="0 2 -20">
+            <a-image id="videoControls" src="#play" position="0 -3 " scale="0.5 0.5 1" 
+                    play-pause>
+            </a-image>
+        </a-video>
         <!-- Animated Model -->
         <a-entity gltf-model="#NicoModel" position="0 0 -1 " scale=".25 .25 .25" animation-mixer></a-entity>
 
