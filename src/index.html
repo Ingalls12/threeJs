@@ -45,6 +45,7 @@
             <img id="play" src="./textures/BtnPlay.png">
             <img id="pause" src="./textures/BtnPause.png">
             <video id="videoLogo" autoplay loop="true" src="./videos/Gyro.mp4"></video>
+            <audio id="soundTest" src="./sounds/206.mp3" preload="auto"></audio>
             <!-- Define model  -->
             <a-asset-item id="NicoModel" src="./models/Reloj_wNikoUncom.glb"></a-asset-item>
         </a-assets>
@@ -53,14 +54,19 @@
         <a-camera position="0 0 0" look-controls="enabled: true">
             <a-cursor></a-cursor>
         </a-camera>
+
         <!-- Video -->
         <a-video loop="true" src="#videoLogo" width="8" height="4.5" position="0 2 -20">
             <a-image id="videoControls" src="#play" position="0 -3 " scale="0.5 0.5 1" 
                     play-pause>
             </a-image>
         </a-video>
+
         <!-- Animated Model -->
-        <a-entity gltf-model="#NicoModel" position="0 0 -1 " scale=".25 .25 .25" animation-mixer></a-entity>
+        <a-entity gltf-model="#NicoModel" position="0 0 -1 " scale=".25 .25 .25" sound="src: #soundTest; on: click"></a-entity>
+        
+        <!-- Audio -->
+        <!-- <a-cylinder color="#0088FF" height=".5" position="-2 0 -1" sound="src: #soundTest; on: click"></a-cylinder> -->
 
     </a-scene>
     <!-- <script type="module" src="./script.js"></script> -->
