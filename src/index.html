@@ -23,6 +23,20 @@
                 });
             }
         });
+        AFRAME.registerComponent('instanciate', {
+            init: function(){
+                const gltfLoader = new GLTFLoader(loadingManager);
+                const scene = new THREE.Scene();
+                this.el.addEventListener('click', function(e) {
+
+                    gltfLoader.load('/models/Reloj_wNikoUncom.glb', (gltf) => {
+                    gltf.scene.position.copy(intersectionPoint);
+                    gltf.scene.scale.set(.5, .5, .5);
+                    scene.add(gltf.scene);
+                    });
+                });
+            }
+        });
     </script>
     <title>Place Object Test</title>
     <link rel="stylesheet" href="./style.css">
@@ -49,6 +63,8 @@
             <audio id="soundTest" src="./sounds/10-35MAST11.wav" preload="auto"></audio>
             <!-- Define model  -->
             <a-asset-item id="NicoModel" src="./models/Reloj_wNikoUncom.glb"></a-asset-item>
+            
+            <a-asset-item id="LogoModel" src="./models/Logo.glb"></a-asset-item>
             <!-- Define link -->
             <img id="homeThumbnail" src="./textures/SBLogo.png" alt="Yobecaps"/>
         </a-assets>
@@ -56,6 +72,7 @@
         <!-- Camera -->
         <a-camera position="0 0 0" look-controls="enabled: true">
             <a-cursor></a-cursor>
+            <!-- <a-image id="" src="#homeThumbnail" position="-0.4 0.4 -0.5" width=".2" height=".2" link="href: https://www.spaceboy.mx/; title:Spaceboy; image: #homeThumbnail"></a-image> -->
         </a-camera>
 
         <!-- Video -->
@@ -69,7 +86,9 @@
         <a-entity gltf-model="#NicoModel" position="0 0 -1 " scale=".25 .25 .25" sound="src: #soundTest; on: click"></a-entity>
         
         <!-- Link -->
-        <a-cylinder color="#0088FF" height=".5" radius="0.2" position="-2 0 -1" link="href: https://www.spaceboy.mx/; title:Spaceboy; image: #homeThumbnail"></a-cylinder>
+        <a-entity gltf-model="#LogoModel" scale=".2 .2 .2" position="2 0 -3" link="href: https://www.spaceboy.mx/; title:Spaceboy; image: #homeThumbnail">
+            <!-- <a-image id="" src="#homeThumbnail" position="0 0 0.5" width=".2" height=".2"></a-image> -->
+        /<a-entity>
 
         <!-- Audio -->
         <!-- <a-cylinder color="#0088FF" height=".5" position="-2 0 -1" sound="src: #soundTest; on: click"></a-cylinder> -->
